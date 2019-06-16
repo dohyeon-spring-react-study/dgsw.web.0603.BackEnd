@@ -1,5 +1,7 @@
 use web01board;
 
+ALTER TABLE user AUTO_INCREMENT=0;
+
 delete from user where account='user6';
 
 insert into user(account, password, username, email) values
@@ -17,3 +19,4 @@ values
 (1, 'title 1', 'content context 3'),
 (2, 'title 1', 'content context 4'),
 (3, 'title 1', 'content context 5');
+

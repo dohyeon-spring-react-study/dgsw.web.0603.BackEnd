@@ -38,14 +38,14 @@
     </delete>
 
     <select id="findAll" resultType="HashMap">
-        select id, user_id, title, content, created, updated
-        from post
+      select p.id, p.user_id, u.username, u.account, p.title, p.content, p.created, p.updated
+      from post p left join user u on p.user_id = u.id order by p.id desc;
     </select>
 
     <select id="findByUserId" parameterType="Long" resultType="HashMap">
         select p.id, p.user_id, u.username, u.account, p.title, p.content, p.created, p.updated
         from post p left join user u on p.user_id = u.id
-        where user_id = #{userId}
+        where user_id = #{userId} order by p.id desc;
     </select>
 
 </mapper>
